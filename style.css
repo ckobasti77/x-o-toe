@@ -1,0 +1,101 @@
+body{
+    background-color: #36393f;
+}
+
+#game {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.heading {
+    font-family: sans-serif;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.board {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.square {
+    width: 30%;
+    height: 30%;
+    background-color: #2f3136;
+    border: 1px solid #444b52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-family: sans-serif;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.square:hover {
+    background-color: #444b52;
+    cursor: pointer;
+}
+
+.square.x {
+    animation: x-animation 0.5s ease;
+}
+
+.square.o {
+    animation: o-animation 0.5s ease;
+}
+
+@keyframes x-animation {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes o-animation {
+    from {
+        transform: rotate(0deg) scale(0);
+    }
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+#reset {
+    background-color: #fff;
+    color: #36393f;
+    padding: 10px 20px;
+    border: 0;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#reset:hover {
+    background-color: #444b52;
+    color: #fff;
+}
+
+#winner {
+    display: block;
+    font-size: 6rem;
+    font-family: sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    width: 100vw;
+}
